@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-size: 1.5rem;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+aside,
+nav,
+footer,
+header,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  height: auto;
+  margin: 5rem;
+  margin-top: 1.5rem;
+}
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}

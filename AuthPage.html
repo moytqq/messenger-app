@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/pages/AuthPage/AuthPage.css" />
+    <link rel="stylesheet" href="/src/pages/main.css" />
+    <link rel="stylesheet" href="/src/pages/components.css" />
+    <title>Messenger-Auth</title>
+  </head>
+  <body>
+    <header class="header-authPage">
+      Авторизация
+      <button class="header-exitAuth__button" id="id-exitAuth-button"></button>
+    </header>
+    <div>Почта:</div>
+    <main class="main-authPage">
+      <input class="main-authPage__input" type="text" id="id-authPage-input" />
+      <div class="main-authPage__buttonsLayout">
+        <button class="main-authPage__button" id="id-authPage-buttonGetCode">Получить код</button>
+        <button class="main-authPage__button" id="id-authPage-buttonSendCode">Ввести код</button>
+      </div>
+    </main>
+
+    <script type="module" src="/src/pages/AuthPage/AuthPage.js"></script>
+  </body>
+</html>

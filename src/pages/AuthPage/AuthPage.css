@@ -1,0 +1,43 @@
+.header-authPage {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header-exitAuth__button {
+  background-image: url('/img/cross.svg');
+  background-size: contain;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  cursor: pointer;
+  margin-left: 1rem;
+  vertical-align: middle;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  border: none;
+}
+.header-exitAuth__button:hover {
+  opacity: 1;
+}
+.main-authPage {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.main-authPage__buttonsLayout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.25rem;
+}
+.main-authPage__button {
+  flex-grow: 1;
+}
+.main-authPage__input {
+  padding: 0.5rem;
+}

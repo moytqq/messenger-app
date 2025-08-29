@@ -1,0 +1,31 @@
+.header-settingsPage {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header-exitSettings__button {
+  background-image: url('/img/cross.svg');
+  background-size: contain;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  cursor: pointer;
+  margin-left: 1rem;
+  vertical-align: middle;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  border: none;
+}
+.header-exitSettings__button:hover {
+  opacity: 1;
+}
+.main-settingsPage {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
