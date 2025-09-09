@@ -18,4 +18,5 @@ async function sendEmail(email) {
 document.querySelector('#id-authPage-buttonGetCode').addEventListener('click', () => {
   const email = document.querySelector('#id-authPage-input').value;
   sendEmail(email);
+  window.location.href = '/ConfirmPage.html';
 });

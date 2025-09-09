@@ -7,5 +7,5 @@ button {
 input {
   border: 0.12rem solid black;
   flex-grow: 1;
-  padding-left: 0.1rem;
+  padding-left: 0.5rem;
 }

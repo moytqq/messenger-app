@@ -20,6 +20,13 @@ export default defineConfig({
   // },
   // Опционально: настройки сервера (например, чтобы открывать браузер автоматически)
   server: {
+    proxy: {
+      '/api': {
+        target: 'https://mighty-cove-31255.herokuapp.com',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
     open: true,
   },
 

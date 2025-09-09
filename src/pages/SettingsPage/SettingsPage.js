@@ -1,16 +1,23 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const name = localStorage.getItem('name');
-  if (name) {
-    document.querySelector('#id-settingsPage-input').value = name;
-  }
+import Cookies from 'js-cookie';
+import { getUserData, changeName } from '../fetchFuncs';
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const data = await getUserData();
+  document.querySelector('#id-settingsPage-input').value = data.name;
 });
 document.querySelector('#id-exitSettings-button').addEventListener('click', () => {
   window.location.href = '/index.html';
 });
 
-document.querySelector('#id-settingsPage-button').addEventListener('click', () => {
+document.querySelector('#id-settingsPage-button').addEventListener('click', async () => {
   const newName = document.querySelector('#id-settingsPage-input').value;
-  localStorage.removeItem('name');
-  localStorage.setItem('name', newName);
-  window.location.href = '/index.html';
+  const status = await changeName(newName);
+  if (status) {
+    window.location.href = '/index.html';
+  } else {
+    document.querySelector('#id-settingsPage-input').classList.add('err-occured');
+  }
+  // localStorage.removeItem('name');
+  // localStorage.setItem('name', newName);
+  // window.location.href = '/index.html';
 });

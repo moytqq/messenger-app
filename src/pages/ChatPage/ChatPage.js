@@ -1,4 +1,11 @@
 import { format } from 'date-fns';
+import { getUserData } from '../fetchFuncs';
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const h = messageHistory();
+// });
+
+const data = await getUserData();
 
 function addMessage(text, isSend) {
   const newMessageElement = document.createElement('div');
@@ -7,7 +14,7 @@ function addMessage(text, isSend) {
 
   newMessageText.className = 'main__message--text';
   if (isSend) {
-    newMessageText.textContent = localStorage.getItem('name') + ': ' + text;
+    newMessageText.textContent = data.name + ': ' + text;
   } else {
     newMessageText.textContent = 'Имя отправителя: ' + text;
   }
