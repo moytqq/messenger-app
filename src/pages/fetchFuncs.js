@@ -12,7 +12,7 @@ export async function getUserData() {
   return data;
 }
 
-async function sendEmail(email) {
+export async function sendEmail(email) {
   let response = await fetch('https://edu.strada.one/api/user', {
     method: 'POST',
     headers: {
@@ -21,16 +21,16 @@ async function sendEmail(email) {
     body: JSON.stringify({ email: `${email}` }),
   });
 }
-async function messageHistory() {
+export async function getMessageHistory() {
   const token = Cookies.get('code');
-  await fetch('https://mighty-cove-31255.herokuapp.com/api/messages', {
+  let response = await fetch('https://edu.strada.one/api/messages', {
     method: 'GET',
-    mode: 'no-cors',
     headers: {
-      'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     },
   });
+  response = await response.json();
+  return response;
 }
 
 export async function changeName(name) {

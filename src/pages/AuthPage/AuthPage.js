@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie';
+
 document.querySelector('#id-exitAuth-button').addEventListener('click', () => {
   window.location.href = '/index.html';
 });
@@ -13,10 +15,13 @@ async function sendEmail(email) {
     },
     body: JSON.stringify({ email: `${email}` }),
   });
+  return response.status;
 }
 
 document.querySelector('#id-authPage-buttonGetCode').addEventListener('click', () => {
   const email = document.querySelector('#id-authPage-input').value;
-  sendEmail(email);
+  if (sendEmail(email)) {
+    Cookies.set('userEmail', `${email}`);
+  }
   window.location.href = '/ConfirmPage.html';
 });

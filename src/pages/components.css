@@ -9,3 +9,17 @@ input {
   flex-grow: 1;
   padding-left: 0.5rem;
 }
+.main-chatPage-messages-scroll-button {
+  position: sticky;
+  align-self: center;
+  bottom: 0;
+  aspect-ratio: 15/0.5;
+  padding: 0;
+  margin: 0;
+  opacity: 0.5;
+  display: none;
+  transition: opacity 0.5s ease;
+}
+.main-chatPage-messages-scroll-button:hover {
+  opacity: 1;
+}

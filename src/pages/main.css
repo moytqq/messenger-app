@@ -43,3 +43,8 @@ body {
 .err-occured {
   border-color: red;
 }
+.main-chatPage-messages-list {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.5rem;
+}

@@ -8,14 +8,22 @@
     <link rel="stylesheet" href="/src/pages/components.css" />
     <title>Messenger</title>
   </head>
+  <template id="template">
+    <div class="main__message--text"></div>
+    <div class="main__message--time"></div>
+  </template>
   <body>
     <header class="header-chatPage">
       <button class="header-chatPage__button" id="id-toSettings-button">Настройки</button>
       <button class="header-chatPage__button" id="id-exit-button">Выйти</button>
     </header>
-    <main class="main-chatPage" id="id-main-chatPage"></main>
+    <main class="main-chatPage" id="id-main-chatPage">
+      <ul class="main-chatPage-messages-list" id="id-main-chatPage-messages-list">
+        <button id="id-main-chatPage-messages-scroll-button" class="main-chatPage-messages-scroll-button"></button>
+      </ul>
+    </main>
     <footer class="footer-chatPage">
-      <input id="id-send-input" type="text" placeholder="сообщение" />
+      <input id="id-send-input" type="text" placeholder="Сообщение" />
       <button id="id-send-button">-></button>
     </footer>
     <script type="module" src="/src/pages/ChatPage/ChatPage.js"></script>
