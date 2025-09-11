@@ -1,8 +1,8 @@
-import Cookies from 'js-cookie';
-import { getUserData, changeName } from '../fetchFuncs';
+import { getUserData, changeName } from '../funcs';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const data = await getUserData();
+  const response = await getUserData();
+  const data = await response.json();
   document.querySelector('#id-settingsPage-input').value = data.name;
 });
 document.querySelector('#id-exitSettings-button').addEventListener('click', () => {
@@ -11,13 +11,16 @@ document.querySelector('#id-exitSettings-button').addEventListener('click', () =
 
 document.querySelector('#id-settingsPage-button').addEventListener('click', async () => {
   const newName = document.querySelector('#id-settingsPage-input').value;
-  const status = await changeName(newName);
-  if (status) {
-    window.location.href = '/index.html';
-  } else {
+  if (!newName) {
     document.querySelector('#id-settingsPage-input').classList.add('err-occured');
+    return;
   }
-  // localStorage.removeItem('name');
-  // localStorage.setItem('name', newName);
-  // window.location.href = '/index.html';
+
+  const response = await changeName(newName);
+  if (response.statusText != 'OK') {
+    document.querySelector('#id-settingsPage-input').classList.add('err-occured');
+    return;
+  } else {
+    window.location.href = '/index.html';
+  }
 });
